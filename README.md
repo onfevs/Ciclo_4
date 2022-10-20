@@ -8,4 +8,4 @@
 
 # Errores
 -Cuando no conecte Mongo, se debe hacer inicio + r, buscar servicios, buscar mongo, e iniciarlizarlo. Ya con esto conecta la base
-image.png
+![image](https://user-images.githubusercontent.com/29380120/197049185-da7afbaf-8153-48e8-9ab3-c990892f0d43.png)
