@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const host = "localhost";
 const port = "27017";
-const db = "hr";
+const db = "hr"; //Aca va el nombre de su base de datos
 
 exports.mongoConnect = () => {
 	const mongoStringConnection = `mongodb://${host}:${port}/${db}`;
@@ -10,5 +10,5 @@ exports.mongoConnect = () => {
 	mongoose.Promise = global.Promise;
 	const dbConnection = mongoose.connection;
 	dbConnection.on("error", console.error.bind
-		(console, "Mongodb conection error"))
-}
+		(console, "Mongodb conection error"));
+};
