@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Tarjeta extends Component {
     render() {
         return (
-            <div className="m-0 py-2 col-sm-6">
+            <div className="m-0 py-2 col-sm-4">
                 <div className="mx-4 card">
                     <div className="card-body">
                         <h5 className="card-title">{this.props.titulo}</h5>
@@ -13,7 +13,7 @@ class Tarjeta extends Component {
                     </div>
                 </div>
 
-                <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">

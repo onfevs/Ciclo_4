@@ -1,0 +1,23 @@
+
+[
+    {
+        "titulo": "Estado 1",
+        "descripcion": "Descripcion Estado 1",
+        "numero": 10
+    },
+    {
+        "titulo": "Estado 2",
+        "descripcion": "Descripcion Estado 2",
+        "numero": 20
+    },
+    {
+        "titulo": "Estado 3",
+        "descripcion": "Descripcion Estado 3",
+        "numero": 30
+    },
+    {
+        "titulo": "Estado 4",
+        "descripcion": "Descripcion Estado 4",
+        "numero": 40
+    }
+]

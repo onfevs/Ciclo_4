@@ -3,10 +3,12 @@ import './App.css';
 // Llamando componentes
 import Navegacion from './Components/Navegacion';
 import Tarjeta from './Components/Cards';
+import Cargar from './Components/Cargar';
 
 function App() {
   return (
     <div className="App">
+      <Cargar />
       <Navegacion titulo='Barra 1' />
       <div className="row">
         <Tarjeta titulo='Tarjeta 1' description='Descripcion tarjeta 1' />
