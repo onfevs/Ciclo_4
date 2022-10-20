@@ -1,5 +1,7 @@
 # Ciclo_4
 
 ## Iniciar 
-- npm start siempre para cargar el servidor local
-- .props es para modificar elementos
+
+- npx create-react-app my-app (para crear un proyecto y cargue los archivos bases).
+- npm start siempre para cargar el servidor local.
+- this.props es para modificar elementos.
