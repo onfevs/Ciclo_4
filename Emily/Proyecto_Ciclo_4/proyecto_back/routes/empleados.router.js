@@ -1,9 +1,11 @@
-// Se crea un enrutador con el controller con el mismo nombre
-
-const express = require('express');
-const router = express.Router()
-// Traer todo lo que tiene empleados controller
-const empleadosController = require('../controllers/empleados.controller')
+const express = require("express");
+const router = express.Router();
+const empleadosController = require("../controllers/empleados.controller");
 
 router.post("/", empleadosController.create)
+router.get("/", empleadosController.find)
+router.get("/:id", empleadosController.findOne)
+router.put("/:id", empleadosController.update)
+router.delete("/:id", empleadosController.remove)
+
 module.exports = router

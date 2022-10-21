@@ -3,16 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var database = require("./config/database"); //Llamando el proceso de conexion a la base de datos
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-// Llama a empleados router
+// Variable de la base de datos
+var database = require('./config/database');
+// Se agregan las variables
 var empleadosRouter = require('./routes/empleados.router');
 
 var app = express();
-
-// view engine setup
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -20,12 +16,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Conexion a mongo (Mongo connection)
+// Mongo Connection
 database.mongoConnect();
 
 // Router
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Se crean los routes 
 app.use('/empleados', empleadosRouter);
 
 // catch 404 and forward to error handler
