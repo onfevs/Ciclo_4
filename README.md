@@ -47,4 +47,9 @@ Se instala nodemon global
 ![image](https://user-images.githubusercontent.com/29380120/197049185-da7afbaf-8153-48e8-9ab3-c990892f0d43.png)
 
 - Si te sigue dando error ve a la dabtabase.js y cambia el localhost por 0.0.0.0 con esto ya se soluciona el error de conexion entre mongo y postman
-![image] 
+
+![photo_2022-10-21_15-47-45](https://user-images.githubusercontent.com/29380120/197287026-1c266641-084d-4a4c-99df-b0afc4302e91.jpg)
+
+Solo cambia esta linea por el 0.0.0.0 como mencione antes y ya se te resuelve el inconveniente.
+
+![photo_2022-10-21_15-47-49](https://user-images.githubusercontent.com/29380120/197287050-697a21b2-4cba-4678-9732-f01e2e64e07b.jpg)
