@@ -16,7 +16,7 @@ En visual en una terminal dentro de la carpeta back se inicia un nuevo terminal 
 En el proyecto back, se crea una carpeta config
 
 - Se almacenaran las credenciales para conectar con mongoose
-- Si al declara el localhost tira error cambiarlo por 0.0.0.0 con esto se soluciona el error y deja enviar parametros desde Postman
+- Si al declarar el localhost tira error cambiarlo por 0.0.0.0 con esto se soluciona el error y deja enviar parametros desde Postman
 - Se agregan las variables en la app.js
 
 Se instala nodemon global
