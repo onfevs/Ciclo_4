@@ -64,6 +64,6 @@ Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te
 - Se va a mongo y se crea una tabla llamada usuarios- se le pasa los parametros add data, insert "user and pass" con el hash https://emn178.github.io/online-tools/sha512.html generador.
 - Se crea un usuario.router.js
 - Se pasan los parametros en postman
-- image.png
-- image.png
+- ![image](https://user-images.githubusercontent.com/29380120/197582713-e37d7318-c9d7-4566-9256-4bc601587b79.png)
+- ![image](https://user-images.githubusercontent.com/29380120/197583002-552dda43-4eef-4a53-bc2e-aa62914c8e27.png)
 - En postman authorization Bearer y se pega el token para ingresar a los valores
