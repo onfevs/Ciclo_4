@@ -50,6 +50,20 @@ Se instala nodemon global
 
 ![photo_2022-10-21_15-47-45](https://user-images.githubusercontent.com/29380120/197287026-1c266641-084d-4a4c-99df-b0afc4302e91.jpg)
 
-Solo cambia esta linea por el 0.0.0.0 como mencione antes y ya se te resuelve el inconveniente.
+Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te resuelve el inconveniente.
 
 ![photo_2022-10-21_15-47-49](https://user-images.githubusercontent.com/29380120/197287050-697a21b2-4cba-4678-9732-f01e2e64e07b.jpg)
+
+
+## Interaccion From-BACK
+
+- Se crea usuarios .model .controller y routers se agregan en la app.js
+- se instala json web token https://www.npmjs.com/package/jsonwebtoken, npm install jsonwebtoken en proyecto_back no global.
+
+-Se crea una carpeta para autenticacion donde van las credenciales
+- Se va a mongo y se crea una tabla llamada usuarios- se le pasa los parametros add data, insert "user and pass" con el hash https://emn178.github.io/online-tools/sha512.html generador.
+- Se crea un usuario.router.js
+- Se pasan los parametros en postman
+- image.png
+- image.png
+- En postman authorization Bearer y se pega el token para ingresar a los valores
