@@ -67,3 +67,5 @@ Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te
 - ![image](https://user-images.githubusercontent.com/29380120/197582713-e37d7318-c9d7-4566-9256-4bc601587b79.png)
 - ![image](https://user-images.githubusercontent.com/29380120/197583002-552dda43-4eef-4a53-bc2e-aa62914c8e27.png)
 - En postman authorization Bearer y se pega el token para ingresar a los valores
+
+# Instalacion de REACT
