@@ -3,8 +3,8 @@ import { Container, Form, FloatingLabel, Button, Row, Col } from 'react-bootstra
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import { MdPassword } from "react-icons/md";
 import { FcBusinessman } from "react-icons/fc";
-
-
+import { GrFacebook, GrInstagram, GrTwitter, GrGithub } from "react-icons/gr";
+import './login.css';
 
 export default class login extends React.Component {
 	constructor(props) {
@@ -16,35 +16,47 @@ export default class login extends React.Component {
 	}
 
 	iniciarSesion() {
-		alert('Please enter');
+		alert("ALERTA!")
 	}
 
 
 	render() {
 		return (
-			<Container id="login-container" style={{ marginTop: 300 }}>
+			<Container id="login-container">
 				<Row>
-					<Col>
+					<Col
+						sm="12"
+						xs="12"
+						md={{ span: 4, offset: 4 }}
+						lg={{ span: 4, offset: 4 }}
+						xl={{ span: 4, offset: 4 }}>
 						<Row>
-							<h2 style={{ marginBottom: 20, color: 'deepskyblue' }}>Iniciar Sesion</h2>
+							<h2>Iniciar Sesion</h2>
 						</Row>
-						<Row><Form.Label style={{ alignItems: "center", display: "flex", gap: 10 }}><FcBusinessman /></Form.Label>
+						<Row><Form.Label><FcBusinessman /></Form.Label>
 							<FloatingLabel
 								controlId="floatingInput"
 								label="Usuario"
 								className="mb-4">
 								<Form.Control onChange={(e) => this.setState({ usuario: e.target.value })} required placeholder="Usuario" />
 							</FloatingLabel>
-							<Form.Label style={{ alignItems: "center", display: "flex", gap: 10 }}><MdPassword /></Form.Label>
+							<Form.Label><MdPassword /></Form.Label>
 							<FloatingLabel controlId="floatingPassword" label="Contraseña" >
 								<Form.Control type="password" onChange={(e) => this.setState({ pass: e.target.value })} required placeholder="Password" />
 							</FloatingLabel>
-							<Button variant="primary" style={{ marginTop: 20, width: '100%', outline: '2px solid dodgerblue', outlineOffset: '2px', }}
+							<Button variant="primary"
 								onClick={() => {
 									this.iniciarSesion();
 								}}>
 								<HiArrowRightOnRectangle /> Iniciar Sesion
 							</Button>
+							{/* Redes sociales */}
+							<div className="social">
+								<a href="https://facebook.com/onfevs" target="blank"><GrFacebook /></a>
+								<a href="https://instagram.com/onfevs" target="blank"><GrInstagram /></a>
+								<a href="https://twitter.com/onfevs" target="blank"><GrTwitter /></a>
+								<a href="https://github.com/onfevs" target="blank"><GrGithub /></a>
+							</div>
 						</Row>
 					</Col>
 				</Row >

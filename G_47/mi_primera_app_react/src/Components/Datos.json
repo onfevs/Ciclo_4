@@ -1,23 +1,43 @@
-
 [
     {
         "titulo": "Estado 1",
-        "descripcion": "Descripcion Estado 1",
-        "numero": 10
+        "descripcion": "Descripcion estado 1",
+        "numero": 10,
+        "imagen":"./multimedia/img1.png",
+        "responsable":"Luis",
+        "Prioridad":"Alta"
+
     },
     {
         "titulo": "Estado 2",
-        "descripcion": "Descripcion Estado 2",
-        "numero": 20
+        "descripcion": "Descripcion estado 2",
+        "numero": 20,
+        "imagen":"./multimedia/img2.webp",
+        "responsable":"Paula",
+        "Prioridad":"Media"
     },
     {
         "titulo": "Estado 3",
-        "descripcion": "Descripcion Estado 3",
-        "numero": 30
+        "descripcion": "Descripcion estado 3",
+        "numero": 30,
+        "imagen":"./multimedia/img3.jpg",
+        "responsable":"Ariana",
+        "Prioridad":"Baja"
     },
     {
         "titulo": "Estado 4",
-        "descripcion": "Descripcion Estado 4",
-        "numero": 40
+        "descripcion": "Descripcion estado 4",
+        "numero": 40,
+        "imagen":"./multimedia/img4.png",
+        "responsable":"Andres",
+        "Prioridad":"Alta"
+    },
+    {
+        "titulo": "Estado 5",
+        "descripcion": "Descripcion estado 5",
+        "numero": 50,
+        "imagen":"./multimedia/img5.gif",
+        "responsable":"Maria",
+        "Prioridad":"Alta"
     }
 ]
