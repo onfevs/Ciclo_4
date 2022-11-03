@@ -57,6 +57,9 @@ export default class login extends React.Component {
 								<a href="https://twitter.com/onfevs" target="blank"><GrTwitter /></a>
 								<a href="https://github.com/onfevs" target="blank"><GrGithub /></a>
 							</div>
+							<div className="pie">
+								&copy; 2022 @OnfeVS
+							</div>
 						</Row>
 					</Col>
 				</Row >

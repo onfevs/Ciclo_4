@@ -1,5 +1,5 @@
 #login-container {
-    margin-top: 35%;
+    margin-top: 30%;
 }
 
 #login-container h2,
@@ -34,4 +34,25 @@
 button {
     outline: 1px solid #0D6EFD;
     outline-offset: 2px;
+}
+
+.pie {
+    color: #0D6EFD;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Cambiar el color del label */
+.form-floating>label {
+    color: #0D6EFD;
+}
+
+/* Cambiar el color del placeholder */
+.form-floating>.form-control:not(:placeholder-shown) {
+    color: darkblue;
+}
+
+/* Cambiar el color del selector del mouse caret */
+input {
+    caret-color: #0D6EFD;
 }
