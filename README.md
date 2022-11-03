@@ -69,3 +69,6 @@ Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te
 - En postman authorization Bearer y se pega el token para ingresar a los valores
 
 # Instalacion de REACT
+
+- Instalando un roteador npm install react-router-dom en el front, se crea una carpeta y un archivo llamado router.js
+- Se instala axios https://github.com/axios/axios, para conectar el back con el front  npm install axios de manera local
