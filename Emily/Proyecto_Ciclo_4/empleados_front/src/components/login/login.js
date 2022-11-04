@@ -5,6 +5,8 @@ import { MdPassword } from "react-icons/md";
 import { FcBusinessman } from "react-icons/fc";
 import { GrFacebook, GrInstagram, GrTwitter, GrGithub } from "react-icons/gr";
 import './login.css';
+import axios from "axios"; // Para conectar el back con el front
+// import APIHOST from "../../app.json";
 
 export default class login extends React.Component {
 	constructor(props) {
@@ -16,7 +18,16 @@ export default class login extends React.Component {
 	}
 
 	iniciarSesion() {
-		alert("ALERTA!")
+		axios.post(`http://localhost:3001/usuarios/login`, {
+			usuario: this.state.usuario,
+			pass: this.state.pass,
+		})
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}
 
 

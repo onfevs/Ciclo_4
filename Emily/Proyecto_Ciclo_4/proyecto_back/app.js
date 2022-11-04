@@ -7,6 +7,7 @@ var logger = require('morgan');
 var database = require('./config/database');
 // Se agregan las variables
 var auth = require('./auth/main_auth');
+var cors = require('cors');
 
 var empleadosRouter = require('./routes/empleados.router');
 var noviosRouter = require('./routes/novios.router');
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
 // Mongo Connection
 database.mongoConnect();
