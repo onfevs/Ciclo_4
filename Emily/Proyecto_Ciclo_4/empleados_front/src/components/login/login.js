@@ -6,7 +6,13 @@ import { FcBusinessman } from "react-icons/fc";
 import { GrFacebook, GrInstagram, GrTwitter, GrGithub } from "react-icons/gr";
 import './login.css';
 import axios from "axios"; // Para conectar el back con el front
-// import APIHOST from "../../app.json";
+import app from "../../app.json";
+import { isNull } from "util";
+import Cookies from "universal-cookie";
+import { calcularExpirarSesion } from "../helper/helper";
+
+const { APIHOST } = app;
+const cookies = new Cookies();
 
 export default class login extends React.Component {
 	constructor(props) {
@@ -18,12 +24,21 @@ export default class login extends React.Component {
 	}
 
 	iniciarSesion() {
-		axios.post(`http://localhost:3001/usuarios/login`, {
+		axios.post(`${APIHOST}/usuarios/login`, {
 			usuario: this.state.usuario,
 			pass: this.state.pass,
 		})
 			.then((response) => {
-				console.log(response);
+				if (isNull(response.data.token)) {
+					alert("Usuario y/o contrasena invalidos")
+				}
+				else {
+					cookies.set('_s', response.data.token,
+						{
+							path: '/',
+							expires: calcularExpirarSesion(),
+						});
+				}
 			})
 			.catch((err) => {
 				console.log(err);
