@@ -72,3 +72,9 @@ Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te
 
 - Instalando un roteador npm install react-router-dom en el front, se crea una carpeta y un archivo llamado router.js
 - Se instala axios https://github.com/axios/axios, para conectar el back con el front  npm install axios de manera local
+- Se instalan en el back
+- Se instala cors en el back npm install cors
+- Se instala npm install universal-cookie para los tiempos de inicio de sesion en el back y en el front
+- Se instala en el from
+- Se instala npm i util la dependencia util valida el token.
+- Se instala npm install react-router-dom@5.1.2 en el front

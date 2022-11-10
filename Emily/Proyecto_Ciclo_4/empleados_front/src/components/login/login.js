@@ -10,6 +10,7 @@ import app from "../../app.json";
 import { isNull } from "util";
 import Cookies from "universal-cookie";
 import { calcularExpirarSesion } from "../helper/helper";
+import Loading from "../loading/loading"; // La clase es en Letra mayuscula
 
 const { APIHOST } = app;
 const cookies = new Cookies();
@@ -18,12 +19,14 @@ export default class login extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			loading: false,
 			usuario: '',
 			pass: ''
 		};
 	}
 
 	iniciarSesion() {
+		this.setState({ loading: true });
 		axios.post(`${APIHOST}/usuarios/login`, {
 			usuario: this.state.usuario,
 			pass: this.state.pass,
@@ -39,9 +42,11 @@ export default class login extends React.Component {
 							expires: calcularExpirarSesion(),
 						});
 				}
+				this.setState({ loading: false });
 			})
 			.catch((err) => {
 				console.log(err);
+				this.setState({ loading: false });
 			});
 	}
 
@@ -49,6 +54,7 @@ export default class login extends React.Component {
 	render() {
 		return (
 			<Container id="login-container">
+				<Loading show={this.state.loading} />
 				<Row>
 					<Col
 						sm="12"
