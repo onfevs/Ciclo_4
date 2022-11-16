@@ -78,3 +78,5 @@ Solo cambia esta linea por el 0.0.0.0 o 127.0.0.1 como mencione antes y ya se te
 - Se instala en el from
 - Se instala npm i util la dependencia util valida el token.
 - Se instala npm install react-router-dom@5.1.2 en el front
+-  Instalar  sirve para importar tablas npm install react-bootstrap-table-next --force 
+-  Instalar paginacion npm install react-bootstrap-table2-paginator --force

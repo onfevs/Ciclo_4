@@ -41,6 +41,7 @@ export default class login extends React.Component {
 							path: '/',
 							expires: calcularExpirarSesion(),
 						});
+					this.props.history.push(window.open('/empleados'));
 				}
 				this.setState({ loading: false });
 			})
@@ -90,7 +91,7 @@ export default class login extends React.Component {
 								<a href="https://github.com/onfevs" target="blank"><GrGithub /></a>
 							</div>
 							<div className="pie">
-								&copy; 2022 @OnfeVS
+								&copy; OnfeVS 2022
 							</div>
 						</Row>
 					</Col>
