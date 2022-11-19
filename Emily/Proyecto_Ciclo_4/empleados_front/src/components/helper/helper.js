@@ -30,10 +30,10 @@ function renovarSesion() {
 export const request = {
     get: function (services) {
         let token = renovarSesion();
-        return axios.get(`${APIHOST}${services}}`, {
+        return axios.get(`${APIHOST}${services}`, {
             headers: {
-                Authorization: `Bearer${token}`,
-            }
+                Authorization: `Bearer ${token}`,
+            },
         });
-    },
-};
+    }
+}

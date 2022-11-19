@@ -1,0 +1,20 @@
+#empleados-buscar-container {
+    margin-top: 150px;
+}
+
+.react-bs-table-sizePerPage-dropdown .dropdown-toggle {
+    float: left;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #0D6EFD;
+}
+
+.search-label {
+    float: left;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.sr-only {
+    font-size: 0;
+}
