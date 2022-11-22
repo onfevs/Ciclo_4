@@ -15,7 +15,7 @@ export default class menu extends React.Component {
         return (
             <Navbar fixed="top" id="navbar" bg="primary" variant="dark" expand="xl">
                 <Container>
-                    <Navbar.Brand href="#home">Logo Aqui</Navbar.Brand>
+                    <Navbar.Brand href="#home"> </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

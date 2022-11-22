@@ -1,6 +1,10 @@
-#empleados-buscar-container,
 #empleados-container {
-    margin-top: 100px;
+    margin-top: 150px;
+}
+
+#empleados-crear-container,
+#empleados-buscar-container {
+    margin-top: 30px;
 }
 
 .react-bs-table-sizePerPage-dropdown .dropdown-toggle {
@@ -34,24 +38,35 @@
     border: none;
 }
 
+
 .nav-item:hover {
     background-color: rgba(0, 136, 255, 0.5);
-    color: black;
+    /* color: black; */
     transition: all 0.2s ease-in;
 }
 
-/* .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-} */
+.nav-tabs .nav-link.active {
+    background-color: #0582ff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#empleados-crear-container .form-label {
+    margin-bottom: 10px;
+    float: left;
+}
+
+.form-label {
+    color: #0582ff;
+}
 
 .form-control {
     /* width: 130%; */
     border: 2px solid #0582ff;
     color: #0582ff;
+    font-size: 20px;
+    height: 50px;
 }
 
 .form-control::placeholder {
@@ -69,4 +84,8 @@
     align-content: space-around;
     justify-content: center;
     align-items: center;
+}
+
+.btn {
+    margin-bottom: 20px;
 }

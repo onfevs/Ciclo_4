@@ -30,3 +30,13 @@
     left: 50%;
     margin-top: var(--bs-dropdown-spacer);
 }
+
+.navbar-brand {
+    background-image: url(../assets/LOGO\ FULLKAOS.png);
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 299px;
+    height: 50px;
+    background-size: cover;
+}

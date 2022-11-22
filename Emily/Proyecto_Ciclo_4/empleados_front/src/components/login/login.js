@@ -87,7 +87,7 @@ export default class login extends React.Component {
 							<div className="social">
 								<a href="https://facebook.com/onfevs" target="blank"><GrFacebook /></a>
 								<a href="https://instagram.com/onfevs" target="blank"><GrInstagram /></a>
-								<a href="https://twitter.com/onfevs" target="blank"><GrTwitter /></a>
+								<a href="https://twitter.com/_fullkaos_" target="blank"><GrTwitter /></a>
 								<a href="https://github.com/onfevs" target="blank"><GrGithub /></a>
 							</div>
 							<div className="pie">
