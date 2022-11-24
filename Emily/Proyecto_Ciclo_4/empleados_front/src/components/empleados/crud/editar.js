@@ -4,14 +4,21 @@ import "../empleados.css";
 import { request } from "../../helper/helper";
 import Loading from "../../loading/loading";
 import MessajePrompts from "../../prompts/message";
+import ConfirmationPrompts from "../../prompts/confirmation";
 
 export default class EmpleadosEditar extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			idEmpleado: this.props.getIdEmpleado(),
 			redirect: false, //Para no redirigir a otra pagina
 			message: {
 				text: '',
+				show: false,
+			},
+			confirmation: {
+				title: 'Modificar Empleado',
+				text: 'Desea modificar el empleado?',
 				show: false,
 			},
 			loading: false,
@@ -26,7 +33,30 @@ export default class EmpleadosEditar extends React.Component {
 		};
 		// Mensaje
 		this.onExitedMessage = this.onExitedMessage.bind(this);
+		this.onCancel = this.onCancel.bind(this);
+		this.onConfirm = this.onConfirm.bind(this);
 	}
+
+	componentDidMount() {
+		this.getEmpleado();
+	}
+
+	getEmpleado() {
+		this.setState({ loading: true });
+		request
+			.get(`/empleados/${this.state.idEmpleado}`)
+			.then((response) => {
+				this.setState({
+					empleado: response.data,
+					loading: false,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				this.setState({ loading: false });
+			});
+	}
+
 	setValue(inicioemp, value) {
 		this.setState({
 			empleado: {
@@ -35,13 +65,15 @@ export default class EmpleadosEditar extends React.Component {
 			},
 		});
 	}
+
 	// Funcion de guardar datos en MongoDB
 	guardarEmpleados() {
 		this.setState({ loading: true });
 		request
-			.post("/empleados", this.state.empleado)
+			.put(`/empleados/${this.state.idEmpleado}`, this.state.empleado)
 			.then((response) => {
 				if (response.data.exito) {
+					this.props.changeTab('buscar');
 					this.setState({
 						rediret: response.data.exito,
 						message: {
@@ -59,20 +91,35 @@ export default class EmpleadosEditar extends React.Component {
 	}
 
 	onExitedMessage() {
-		if (this.state.rediret) this.props.changeTab('buscar');
+		if (this.state.redirect) this.props.changeTab('buscar');
 	}
 
+	onCancel() {
+		this.setState({
+			confirmation: { ...this.state.confirmation, show: false, },
+		})
+	}
+
+	onConfirm() {
+		this.setState({
+			confirmation: { ...this.state.confirmation, show: false, },
+		}, this.guardarEmpleados());
+	}
 
 	render() {
 		return (
-			<Container id="empleados-crear-container">
+			<Container id="empleados-editar-container">
 				<MessajePrompts
 					text={this.state.message.text}
 					show={this.state.message.show}
 					duration={2500}
-					onExited={this.onExitedMessage}
-				/>
-
+					onExited={this.onExitedMessage} />
+				<ConfirmationPrompts
+					show={this.state.confirmation.show}
+					title={this.state.confirmation.title}
+					text={this.state.confirmation.text}
+					onCancel={this.onCancel}
+					onConfirm={this.onConfirm} />
 				<Loading show={this.state.loading} />
 				<Row>
 					<h1>Editar Empleados</h1>
@@ -82,6 +129,7 @@ export default class EmpleadosEditar extends React.Component {
 						{/* Nombre */}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.nombre}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
@@ -91,6 +139,7 @@ export default class EmpleadosEditar extends React.Component {
 						{/* Primer Apellido */}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.apellido_p}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
@@ -100,6 +149,7 @@ export default class EmpleadosEditar extends React.Component {
 						{/* Segundo Apellido */}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.apellido_m}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
@@ -109,6 +159,7 @@ export default class EmpleadosEditar extends React.Component {
 						{/*  Teléfono*/}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.telefono}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
@@ -118,6 +169,7 @@ export default class EmpleadosEditar extends React.Component {
 						{/* Correo electrónico */}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.mail}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
@@ -127,14 +179,21 @@ export default class EmpleadosEditar extends React.Component {
 						{/* Dirección */}
 						<Form.Floating className="mb-3" >
 							<Form.Control
+								value={this.state.empleado.direccion}
 								id="formBasic"
 								type="name"
 								placeholder="Username"
 								onChange={(e) => this.setValue("direccion", e.target.value)} />
 							<label htmlFor="floatingInputCustom">Dirección </label>
 						</Form.Floating>
-						<Button variant="primary" onClick={() => console.log(this.guardarEmpleados())}>
-							Guardar empleado
+						{/* Boton */}
+						<Button
+							variant="primary"
+							onClick={() =>
+								this.setState({
+									confirmation: { ...this.state.confirmation, show: true },
+								})
+							}>Editar Empleado
 						</Button>
 					</Form>
 				</Row>

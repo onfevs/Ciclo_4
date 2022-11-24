@@ -6,7 +6,7 @@ import ToolkitProvider, { Search, } from "react-bootstrap-table2-toolkit/dist/re
 import { request } from "../helper/helper";
 import Loading from "../loading/loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { isUndefined } from "util";
 
 const { SearchBar } = Search;
@@ -21,9 +21,11 @@ export default class DataGrid extends React.Component {
 		if (this.props.showEditButton && !this.existsColumn("Editar"))
 			this.props.columns.push(this.getEditButton());
 	}
+
 	componentDidMount() {
 		this.getData();
 	}
+
 	getData() {
 		this.setState({ loading: false });
 		request
@@ -36,15 +38,16 @@ export default class DataGrid extends React.Component {
 				console.log(err);
 			});
 	}
+
 	existsColumn(colText) {
 		let col = this.props.columns.find((column) => column.text === colText);
 		return !isUndefined(col);
 	}
+
 	getEditButton() {
 		return {
-			text: "Editar",
-			formatter: function priceFormatter(cell, row) {
-				console.log(row);
+			text: 'Editar',
+			formatter: (cell, row) => {
 				return (
 					<Button onClick={() => this.props.onClickEditButton(row)}>
 						<FontAwesomeIcon icon={faEdit} />
@@ -53,12 +56,12 @@ export default class DataGrid extends React.Component {
 			},
 		};
 	}
-
 	render() {
 		const options = {
 			custom: true,
 			totalSize: this.state.rows.length,
 		};
+
 		return (
 			<>
 				<Loading show={this.state.loading} />
@@ -69,11 +72,11 @@ export default class DataGrid extends React.Component {
 					search
 				>
 					{(props) => (
-						<>
+						<div>
 							<hr />
 							<PaginationProvider pagination={paginationFactory(options)}>
 								{({ paginationProps, paginationTableProps }) => (
-									<>
+									<div>
 										<Row>
 											<Col>
 												<SizePerPageDropdownStandalone {...paginationProps} />
@@ -90,10 +93,10 @@ export default class DataGrid extends React.Component {
 											{...props.baseProps}
 										/>
 										<PaginationListStandalone {...paginationProps} />
-									</>
+									</div>
 								)}
 							</PaginationProvider>
-						</>
+						</div>
 					)}
 				</ToolkitProvider>
 			</>

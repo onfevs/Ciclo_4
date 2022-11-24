@@ -28,15 +28,16 @@ function renovarSesion() {
 }
 
 export const request = {
+    // Obtener
     get: function (services) {
         let token = renovarSesion();
         return axios.get(`${APIHOST}${services}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
-
             },
         });
     },
+    // Crear
     post: function (services, data) {
         let token = renovarSesion();
         return axios.post(`${APIHOST}${services}`, data, {
@@ -45,6 +46,13 @@ export const request = {
             },
         });
     },
-
+    // Editar
+    put: function (services, data) {
+        let token = renovarSesion();
+        return axios.put(`${APIHOST}${services}`, data, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+    },
 };
-

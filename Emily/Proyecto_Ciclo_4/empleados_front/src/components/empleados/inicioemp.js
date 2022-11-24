@@ -9,21 +9,34 @@ export default class Empleados extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTab: "buscar"
+            currentTab: "buscar",
+            _id: null,
         };
         this.changeTab = this.changeTab.bind(this);
+        this.setIdEmpleado = this.setIdEmpleado.bind(this);
+        this.getIdEmpleado = this.getIdEmpleado.bind(this);
     }
 
-    // Para mantener la ventana
     changeTab(tab) {
         this.setState({ currentTab: tab });
+    }
+
+    setIdEmpleado(id) {
+        this.setState({ _id: id });
+    }
+
+    getIdEmpleado() {
+        return this.state._id;
     }
 
     render() {
         return (
             <Container id="empleados-container">
                 <Row>
-                    <Nav fill variant="tabs" defaultActiveKey="/buscar"
+                    <Nav
+                        fill
+                        variant="tabs"
+                        defaultActiveKey="/buscar"
                         onSelect={(eventKey) => this.setState({ currentTab: eventKey })}>
                         <Nav.Item>
                             <Nav.Link eventKey="buscar">Buscar</Nav.Link>
@@ -34,10 +47,17 @@ export default class Empleados extends React.Component {
                     </Nav>
                 </Row>
                 <Row>
-                    {this.state.currentTab === "buscar" ? (<EmpleadosBuscar />) :
-                        this.state.currentTab === "crear" ? (<EmpleadosCrear changeTab={(tab) => this.changeTab(tab)} />) : (<EmpleadosEditar />)}
+                    {this.state.currentTab === "buscar" ? (
+                        <EmpleadosBuscar changeTab={this.changeTab}
+                            setIdEmpleado={this.setIdEmpleado} />
+                    ) : this.state.currentTab === "crear" ? (
+                        <EmpleadosCrear changeTab={this.changeTab} />
+                    ) : (
+                        <EmpleadosEditar changeTab={this.changeTab}
+                            getIdEmpleado={this.getIdEmpleado} />
+                    )}
                 </Row>
-            </Container >
+            </Container>
         );
     }
 }
