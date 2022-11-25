@@ -1,14 +1,14 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-export default class confirmationPrompts extends React.Component {
+export default class ConfirmationPrompts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             show: false,
             title: '',
             text: '',
-        }
+        };
     }
 
     componentWillReceiveProps(nextProps) {
@@ -26,12 +26,18 @@ export default class confirmationPrompts extends React.Component {
                 <Modal.Header closeButton>
                     <Modal.Title>{this.state.title}</Modal.Title>
                 </Modal.Header>
+
                 <Modal.Body>
                     <p>{this.state.text}</p>
                 </Modal.Body>
+
                 <Modal.Footer>
-                    <Button variant="secondary" onclick={() => this.props.onCancel()}>Cancelar</Button>
-                    <Button variant="primary" onclick={() => this.props.onConfirm()}>Confirmar</Button>
+                    <Button variant="secondary"
+                        onClick={() => this.props.onCancel()}
+                    >Cancelar</Button>
+                    <Button variant="primary"
+                        onClick={() => this.props.onConfirm()}
+                    >Confirmar</Button>
                 </Modal.Footer>
             </Modal>
         );

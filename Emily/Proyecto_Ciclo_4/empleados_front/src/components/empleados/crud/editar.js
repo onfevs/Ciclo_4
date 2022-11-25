@@ -108,7 +108,7 @@ export default class EmpleadosEditar extends React.Component {
 
 	render() {
 		return (
-			<Container id="empleados-editar-container">
+			<Container id="empleados-crear-container">
 				<MessajePrompts
 					text={this.state.message.text}
 					show={this.state.message.show}
